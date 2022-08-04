@@ -17,7 +17,7 @@ public class StatisticalPlayerData {
 
     String clientVersion;
     String clientName;
-    int ping;
+    long ping;
     Location location;
     GameMode gameMode;
     long ticksExisted;
