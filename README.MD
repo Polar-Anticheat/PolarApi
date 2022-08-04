@@ -16,8 +16,8 @@ Watch out for `@Nullable` annotations, which indicate that a field needs to be n
 
 ### Events
 - `DetectionAlertEvent` - gets called right before a cheat detection alert is sent.
-- `MitigationEvent` - gets called when a server tries to prevent a player from taking advantage of their hacks. This
-can be in the form of a setback or a cancellation of a hit. The event can be cancelled to prevent the mitigation.
+- `MitigationEvent` - gets called when the anticheat tries to prevent a player from taking advantage of their cheats. 
+This can be in the form of a setback or a cancellation of a hit. The event can be cancelled to prevent the mitigation.
 - `OffenderBanEvent` / `OffenderKickEvent` get called right before the AntiCheat is about to ban/kick a hacker.
 This event can be cancelled, which will result in no punishment being issued.
 
