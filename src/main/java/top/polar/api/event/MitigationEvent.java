@@ -29,7 +29,6 @@ public class MitigationEvent extends Event implements Cancellable {
     }
 
     public enum MitigationType {
-        SETBACK, HIT_CANCEL
+        MOVEMENT, VELOCITY, ATTACK, NONE
     }
-
 }

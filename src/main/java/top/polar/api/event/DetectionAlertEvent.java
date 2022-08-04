@@ -24,7 +24,7 @@ public class DetectionAlertEvent extends Event {
     private ApiCheckType apiCheckType;
     @Nullable
     private String debugDetails;
-    private int violationLevel;
+    private double violationLevel;
     private StatisticalPlayerData statisticalPlayerData;
 
     @Override
