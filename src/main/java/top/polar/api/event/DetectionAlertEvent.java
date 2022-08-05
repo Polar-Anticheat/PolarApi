@@ -7,10 +7,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import top.polar.api.check.ApiCheckType;
 import top.polar.api.stats.StatisticalPlayerData;
-
-import javax.annotation.Nullable;
 
 @Getter
 @AllArgsConstructor
@@ -20,6 +19,8 @@ public class DetectionAlertEvent extends Event {
     @Getter
     private static final HandlerList HANDLER_LIST = new HandlerList();
 
+    private String playerName;
+    @Nullable
     private Player player;
     private ApiCheckType apiCheckType;
     @Nullable
