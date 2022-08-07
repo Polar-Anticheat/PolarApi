@@ -12,8 +12,6 @@ import top.polar.api.check.ApiCheckType;
 import top.polar.api.stats.StatisticalPlayerData;
 
 @Getter
-@AllArgsConstructor
-@NoArgsConstructor
 public class DetectionAlertEvent extends Event {
 
     @Getter
@@ -27,6 +25,22 @@ public class DetectionAlertEvent extends Event {
     private String debugDetails;
     private double violationLevel;
     private StatisticalPlayerData statisticalPlayerData;
+
+    public DetectionAlertEvent(String playerName, @Nullable Player player, ApiCheckType apiCheckType,
+                               @Nullable String debugDetails, double violationLevel,
+                               StatisticalPlayerData statisticalPlayerData) {
+        super(true);
+        this.playerName = playerName;
+        this.player = player;
+        this.apiCheckType = apiCheckType;
+        this.debugDetails = debugDetails;
+        this.violationLevel = violationLevel;
+        this.statisticalPlayerData = statisticalPlayerData;
+    }
+
+    public DetectionAlertEvent() {
+        super(true);
+    }
 
     @Override
     @NotNull
