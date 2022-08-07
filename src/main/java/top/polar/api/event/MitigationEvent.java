@@ -12,7 +12,6 @@ import org.jetbrains.annotations.Nullable;
 import top.polar.api.check.ApiCheckType;
 
 @Getter
-@RequiredArgsConstructor
 public class MitigationEvent extends Event implements Cancellable {
 
     @Getter
@@ -24,6 +23,14 @@ public class MitigationEvent extends Event implements Cancellable {
     private final MitigationType mitigationType;
     @Setter
     private boolean cancelled;
+
+    public MitigationEvent(String playerName, @Nullable Player player, ApiCheckType apiCheckType, MitigationType mitigationType) {
+        super(true);
+        this.playerName = playerName;
+        this.player = player;
+        this.apiCheckType = apiCheckType;
+        this.mitigationType = mitigationType;
+    }
 
     @NotNull
     @Override
