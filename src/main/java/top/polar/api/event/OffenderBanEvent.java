@@ -16,6 +16,7 @@ public class OffenderBanEvent extends Event implements Cancellable {
     @Getter
     private static final HandlerList HANDLER_LIST = new HandlerList();
     private final Player player;
+    private final String reason;
     @Setter
     private boolean cancelled;
 

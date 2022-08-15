@@ -1,9 +1,9 @@
 package top.polar.api.event;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.bukkit.entity.Player;
+import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
@@ -12,34 +12,39 @@ import top.polar.api.check.ApiCheckType;
 import top.polar.api.stats.StatisticalPlayerData;
 
 @Getter
-public class DetectionAlertEvent extends Event {
+public class DetectionAlertEvent extends Event implements Cancellable {
 
     @Getter
     private static final HandlerList HANDLER_LIST = new HandlerList();
 
-    private String playerName;
+    private final String playerName;
     @Nullable
-    private Player player;
-    private ApiCheckType apiCheckType;
+    private final Player player;
+    private final ApiCheckType apiCheckType;
+    @Setter
+    private String chatMessage;
     @Nullable
+    @Setter
     private String debugDetails;
-    private double violationLevel;
-    private StatisticalPlayerData statisticalPlayerData;
+    @Setter
+    private String clickRunCommand;
+    private final double violationLevel;
+    private final StatisticalPlayerData statisticalPlayerData;
+    @Setter
+    private boolean cancelled;
 
     public DetectionAlertEvent(String playerName, @Nullable Player player, ApiCheckType apiCheckType,
-                               @Nullable String debugDetails, double violationLevel,
-                               StatisticalPlayerData statisticalPlayerData) {
+                               String chatMessage, @Nullable String debugDetails, String clickRunCommand,
+                               double violationLevel, StatisticalPlayerData statisticalPlayerData) {
         super(true);
         this.playerName = playerName;
         this.player = player;
         this.apiCheckType = apiCheckType;
+        this.chatMessage = chatMessage;
         this.debugDetails = debugDetails;
+        this.clickRunCommand = clickRunCommand;
         this.violationLevel = violationLevel;
         this.statisticalPlayerData = statisticalPlayerData;
-    }
-
-    public DetectionAlertEvent() {
-        super(true);
     }
 
     @Override

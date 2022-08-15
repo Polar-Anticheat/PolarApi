@@ -13,9 +13,9 @@ import org.jetbrains.annotations.NotNull;
 @RequiredArgsConstructor
 public class OffenderKickEvent extends Event implements Cancellable {
 
-    @Getter
     private static final HandlerList HANDLER_LIST = new HandlerList();
     private final Player player;
+    private final String reason;
     @Setter
     private boolean cancelled;
 
