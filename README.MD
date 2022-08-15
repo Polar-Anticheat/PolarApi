@@ -53,17 +53,20 @@ And add the following to your `<dependencies>`:
     <groupId>com.github.Polar-Anticheat</groupId>
     <artifactId>PolarApi</artifactId>
     <version>master-SNAPSHOT</version>
+    <scope>provided</scope>
 </dependency>
 ```
 
 #### Gradle Guide
 
 Add the following to your `repositories {}`:
+
 ```
 maven { url 'https://jitpack.io' }
 ```
 
 Add the following to your `dependencies {}`:
+
 ```
 compileOnly 'com.github.Polar-Anticheat:PolarApi:master-SNAPSHOT'
 ```
