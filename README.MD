@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/Q1muxTC.png" width=100 alt="Logo" style="float: left; margin-right: 20px" />
+<img src="https://henriks9.ovh/polar_2.png" width=100 alt="Logo" style="float: left; margin-right: 20px" />
 
 ## Polar API
 
