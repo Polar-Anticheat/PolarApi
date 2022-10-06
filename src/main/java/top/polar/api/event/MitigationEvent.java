@@ -1,7 +1,6 @@
 package top.polar.api.event;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
@@ -10,6 +9,7 @@ import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import top.polar.api.check.ApiCheckType;
+import top.polar.api.mitigation.MitigationType;
 
 @Getter
 public class MitigationEvent extends Event implements Cancellable {
@@ -36,9 +36,5 @@ public class MitigationEvent extends Event implements Cancellable {
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
-    }
-
-    public enum MitigationType {
-        MOVEMENT, VELOCITY, ATTACK, NONE
     }
 }
