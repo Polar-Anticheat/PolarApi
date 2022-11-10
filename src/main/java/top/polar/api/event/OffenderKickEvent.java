@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 @RequiredArgsConstructor
 public class OffenderKickEvent extends Event implements Cancellable {
 
-    private static final HandlerList HANDLER_LIST = new HandlerList();
+    private static final HandlerList handlerList = new HandlerList();
     private final Player player;
     private final String reason;
     @Setter
@@ -22,6 +22,6 @@ public class OffenderKickEvent extends Event implements Cancellable {
     @NotNull
     @Override
     public HandlerList getHandlers() {
-        return HANDLER_LIST;
+        return handlerList;
     }
 }

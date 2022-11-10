@@ -15,7 +15,7 @@ import top.polar.api.stats.StatisticalPlayerData;
 public class DetectionAlertEvent extends Event implements Cancellable {
 
     @Getter
-    private static final HandlerList HANDLER_LIST = new HandlerList();
+    private static final HandlerList handlerList = new HandlerList();
 
     private final String playerName;
     @Nullable
@@ -50,6 +50,6 @@ public class DetectionAlertEvent extends Event implements Cancellable {
     @Override
     @NotNull
     public HandlerList getHandlers() {
-        return HANDLER_LIST;
+        return handlerList;
     }
 }

@@ -15,7 +15,7 @@ import top.polar.api.mitigation.MitigationType;
 public class MitigationEvent extends Event implements Cancellable {
 
     @Getter
-    private static final HandlerList HANDLER_LIST = new HandlerList();
+    private static final HandlerList handlerList = new HandlerList();
     private final String playerName;
     @Nullable
     private final Player player;
@@ -35,6 +35,6 @@ public class MitigationEvent extends Event implements Cancellable {
     @NotNull
     @Override
     public HandlerList getHandlers() {
-        return HANDLER_LIST;
+        return handlerList;
     }
 }
