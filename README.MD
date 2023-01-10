@@ -18,6 +18,24 @@ Looking for Polar AntiCheat instead of its API? Polar can be purchased at https:
 Listen for any of the four events in a standard Bukkit listener. Watch out for `@Nullable` annotations, which indicate
 that a field needs to be null-checked.
 
+**Make sure** to register your listener AFTER polar has fully enabled. Since Polar gets initialised asynchronously, you
+will have to register a callback. An example is shown below:
+
+```java
+import org.bukkit.plugin.java.JavaPlugin;
+import top.polar.api.loader.LoaderApi;
+
+public class YourPluginMainClass extends JavaPlugin {
+
+    @Override
+    public void onEnable() {
+        LoaderApi.registerEnableCallback(() -> {
+            // Register your Polar listener here
+        });
+    }
+}
+```
+
 ### Events
 
 - `DetectionAlertEvent` - gets called right before a cheat detection alert is sent.
