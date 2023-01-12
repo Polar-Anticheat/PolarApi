@@ -1,0 +1,10 @@
+name: PolarApi
+version: ${project.version}
+authors:
+  - Lucky
+  - Souvlakis
+loadbefore:
+  - PolarLoader
+api-version: 1.13
+description: API classes for Polar Anticheat
+main: top.polar.api.ApiMain
