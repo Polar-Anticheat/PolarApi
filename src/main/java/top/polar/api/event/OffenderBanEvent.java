@@ -25,4 +25,9 @@ public class OffenderBanEvent extends Event implements Cancellable {
     public HandlerList getHandlers() {
         return handlerList;
     }
+
+    @NotNull
+    public static HandlerList getHandlerList() {
+        return handlerList;
+    }
 }
